@@ -29,3 +29,14 @@ def create_app(test_config=None):
         return "Hello, World. This is Flask"
 
     return app
+
+#already defined - Soll das ein Zusatz f√r die Funktion davor sein ? edit: aufeinmal keine Fehlermeldungen mehr ??? dafuq
+
+def create_app():
+    app = ...
+    #existing code omitted
+
+    from . import db
+    db.init_app(app)
+
+    return app
