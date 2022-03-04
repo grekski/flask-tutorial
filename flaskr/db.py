@@ -9,11 +9,10 @@ def get_db():
         g.db = sqlite3.connect(
                 current_app.config ["DATABASE"],
                 detect_types=sqlite3.PARSE_DECLTYPES
-            )
-#syntax error - Was hab ich anders als im Guide ?
-            g.db.row_factory = sqlite3.Row
+)
+        g.db.row_factory = sqlite3.Row
         
-        return g.db
+    return g.db
 
 def close_db(e=None):
     db = g.pop("db",None) 
